@@ -1,6 +1,7 @@
 
 import React from "react";
 import SearchBar from "./SearchBar";
+import ThemeToggle from "./ThemeToggle";
 
 interface HeaderProps {
   onSearch: (query: string) => void;
@@ -18,8 +19,11 @@ const Header: React.FC<HeaderProps> = ({ onSearch, searchQuery }) => {
             </div>
             <h1 className="text-xl font-bold">Hacker News Reader</h1>
           </div>
-          <div className="w-full md:max-w-xs">
-            <SearchBar onSearch={onSearch} value={searchQuery} />
+          <div className="flex items-center gap-2">
+            <div className="w-full md:max-w-xs">
+              <SearchBar onSearch={onSearch} value={searchQuery} />
+            </div>
+            <ThemeToggle />
           </div>
         </div>
       </div>
